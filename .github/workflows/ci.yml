@@ -42,8 +42,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Compile and test
-        run: mvn clean verify
-        env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/userdb
-          SPRING_DATASOURCE_USERNAME: devuser
-          SPRING_DATASOURCE_PASSWORD: devpass123
+        run: mvn clean verify -Dspring.profiles.active=test
