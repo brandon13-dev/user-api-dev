@@ -42,6 +42,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Compile and test
-        run: mvn clean verify
+        run: mvn clean verify -Dspring.profiles.active=test
         env:
           SPRING_DATASOURCE_URL: test
